@@ -1,0 +1,8 @@
+FROM python:3-slim
+EXPOSE 8000
+
+COPY main.py /src
+
+WORKDIR /src
+
+CMD [ "python", "main.py" ]
