@@ -12,7 +12,7 @@ def main():
 
     for i in range(1, 21):
         url = os.getenv("service2url")
-        url = "server:8000"
+        url = "http://server:8000"
         text = f"{i} {datetime.now()} {url}"
         log_file.write(text + "\n")
 
