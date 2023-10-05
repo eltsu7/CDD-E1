@@ -1,13 +1,10 @@
 FROM golang:1.20
-
-COPY go.mod ./
-RUN go mod download
-
-COPY main.go ./
-
-RUN CGO_ENABLED=0 GOOS=linux go build -o /server
-
 EXPOSE 8000
 
-CMD ["/server"]
+COPY go.mod go.sum ./
+RUN go mod download && go mod verify
 
+COPY . .
+RUN go build -v -o /usr/local/bin/app ./...
+
+CMD ["app"]
