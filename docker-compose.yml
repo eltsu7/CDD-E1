@@ -2,8 +2,8 @@ services:
   client:
     build: ./s1/
     volumes:
-      - clientlogs:/logs:ro
+      - ./clientlogs:/logs:ro
   server:
     build: ./s2/
     volumes:
-      - serverlogs:/go/delivery/logs:ro
+      - ./serverlogs:/go/delivery/logs:ro
