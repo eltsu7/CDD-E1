@@ -7,3 +7,5 @@ services:
     build: ./s2/
     volumes:
       - ./serverlogs:/go/delivery/logs:ro
+    ports:
+      - "8080:8000"
