@@ -22,7 +22,7 @@ func getRoot(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		panic(err)
 	}
-	_, err = file.Write(body)
+	_, err = file.Write(append(body, byte('\n')))
 	if err != nil {
 		panic(err)
 	}

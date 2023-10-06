@@ -6,7 +6,7 @@ import os
 
 
 def main():
-    log_path = pathlib.Path("/tmp/logs/client.log")
+    log_path = pathlib.Path("/tmp/logs/service1.log")
     log_path.parent.mkdir(exist_ok=True)
     log_file = open(log_path, "w")  # "w" creates and removes everything in the file
 
