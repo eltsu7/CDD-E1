@@ -5,6 +5,7 @@ import (
 	"io"
 	"io/ioutil"
 	"net/http"
+	"os"
 )
 
 func getRoot(w http.ResponseWriter, r *http.Request) {
@@ -14,6 +15,20 @@ func getRoot(w http.ResponseWriter, r *http.Request) {
 	}
 	fmt.Printf("Request body: %s\n", body)
 	io.WriteString(w, "Got it!")
+
+	fi, err := os.Open("service2.log")
+	if err != nil {
+		panic(err)
+	}
+	_, err = fi.Write(body)
+	if err != nil {
+		panic(err)
+	}
+
+	err = fi.Close()
+	if err != nil {
+		panic(err)
+	}
 }
 
 func main() {
