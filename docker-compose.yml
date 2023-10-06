@@ -2,10 +2,10 @@ services:
   client:
     build: ./s1/
     volumes:
-      - ./clientlogs:/logs
+      - ./logs/:/tmp/logs
   server:
     build: ./s2/
     volumes:
-      - ./serverlogs:/go/delivery/logs
+      - ./logs/:/go/delivery/logs
     ports:
       - "8080:8000"
