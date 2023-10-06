@@ -18,7 +18,7 @@ func getRoot(w http.ResponseWriter, r *http.Request) {
 
 	_ = os.Mkdir("logs", os.ModePerm)
 
-	file, err := os.OpenFile("logs/service2.log", os.O_APPEND|os.O_CREATE, 0644)
+	file, err := os.OpenFile("logs/service2.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		panic(err)
 	}
