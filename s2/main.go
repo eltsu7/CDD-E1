@@ -16,7 +16,7 @@ func getRoot(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("Request body: %s\n", body)
 	io.WriteString(w, "Got it!")
 
-	file, err := os.Create("service2.log")
+	file, err := os.Create("logs/service2.log")
 	if err != nil {
 		panic(err)
 	}

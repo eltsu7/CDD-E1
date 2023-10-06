@@ -7,7 +7,6 @@ import os
 
 def main():
     log_path = pathlib.Path("/tmp/logs/client.log")
-    print(os.getcwd())
     log_path.parent.mkdir(exist_ok=True)
     log_file = open(log_path, "w")  # "w" creates and removes everything in the file
 
@@ -23,10 +22,6 @@ def main():
             data=text
         )
         time.sleep(2)
-
-    # Leave container running, used for debug
-    while True:
-        time.sleep(1)
 
 
 if __name__ == "__main__":
